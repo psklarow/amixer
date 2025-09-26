@@ -42,7 +42,7 @@ int main()
     IMixer &mixer = IMixer::alsaInstance();
 
     auto vi = std::ranges::find_if(mixer.channels(), 
-        [](auto &vol) {
+        [](const auto &vol) {
             return vol->getName()=="Speaker";
         }
     );
